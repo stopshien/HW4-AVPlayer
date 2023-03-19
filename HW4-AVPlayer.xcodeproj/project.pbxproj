@@ -13,6 +13,10 @@
 		CFE91C3329C0CA6700DCAC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE91C3129C0CA6700DCAC3B /* Main.storyboard */; };
 		CFE91C3529C0CA6800DCAC3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE91C3429C0CA6800DCAC3B /* Assets.xcassets */; };
 		CFE91C3829C0CA6800DCAC3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE91C3629C0CA6800DCAC3B /* LaunchScreen.storyboard */; };
+		CFE91C4229C0CCF800DCAC3B /* 萬千花蕊慈母悲哀.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFE91C3F29C0CCF800DCAC3B /* 萬千花蕊慈母悲哀.mp3 */; };
+		CFE91C4329C0CCF800DCAC3B /* Desperado.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFE91C4029C0CCF800DCAC3B /* Desperado.mp3 */; };
+		CFE91C4429C0CCF800DCAC3B /* OverYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFE91C4129C0CCF800DCAC3B /* OverYou.mp3 */; };
+		CFE91C4629C0CD3200DCAC3B /* songDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE91C4529C0CD3200DCAC3B /* songDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		CFE91C3429C0CA6800DCAC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE91C3729C0CA6800DCAC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE91C3929C0CA6800DCAC3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE91C3F29C0CCF800DCAC3B /* 萬千花蕊慈母悲哀.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "萬千花蕊慈母悲哀.mp3"; sourceTree = "<group>"; };
+		CFE91C4029C0CCF800DCAC3B /* Desperado.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Desperado.mp3; sourceTree = "<group>"; };
+		CFE91C4129C0CCF800DCAC3B /* OverYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OverYou.mp3; sourceTree = "<group>"; };
+		CFE91C4529C0CD3200DCAC3B /* songDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +67,14 @@
 				CFE91C2B29C0CA6600DCAC3B /* AppDelegate.swift */,
 				CFE91C2D29C0CA6700DCAC3B /* SceneDelegate.swift */,
 				CFE91C2F29C0CA6700DCAC3B /* ViewController.swift */,
+				CFE91C4529C0CD3200DCAC3B /* songDataModel.swift */,
 				CFE91C3129C0CA6700DCAC3B /* Main.storyboard */,
 				CFE91C3429C0CA6800DCAC3B /* Assets.xcassets */,
 				CFE91C3629C0CA6800DCAC3B /* LaunchScreen.storyboard */,
 				CFE91C3929C0CA6800DCAC3B /* Info.plist */,
+				CFE91C3F29C0CCF800DCAC3B /* 萬千花蕊慈母悲哀.mp3 */,
+				CFE91C4029C0CCF800DCAC3B /* Desperado.mp3 */,
+				CFE91C4129C0CCF800DCAC3B /* OverYou.mp3 */,
 			);
 			path = "HW4-AVPlayer";
 			sourceTree = "<group>";
@@ -125,9 +137,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE91C4329C0CCF800DCAC3B /* Desperado.mp3 in Resources */,
 				CFE91C3829C0CA6800DCAC3B /* LaunchScreen.storyboard in Resources */,
 				CFE91C3529C0CA6800DCAC3B /* Assets.xcassets in Resources */,
 				CFE91C3329C0CA6700DCAC3B /* Main.storyboard in Resources */,
+				CFE91C4429C0CCF800DCAC3B /* OverYou.mp3 in Resources */,
+				CFE91C4229C0CCF800DCAC3B /* 萬千花蕊慈母悲哀.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE91C4629C0CD3200DCAC3B /* songDataModel.swift in Sources */,
 				CFE91C3029C0CA6700DCAC3B /* ViewController.swift in Sources */,
 				CFE91C2C29C0CA6600DCAC3B /* AppDelegate.swift in Sources */,
 				CFE91C2E29C0CA6700DCAC3B /* SceneDelegate.swift in Sources */,
