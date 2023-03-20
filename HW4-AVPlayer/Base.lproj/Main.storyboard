@@ -57,9 +57,14 @@
                                     <action selector="forwardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0W-ZG-Kg4"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-tb-zKu">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-tb-zKu">
                                 <rect key="frame" x="57" y="144" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Y1X-3A-avH" appends="YES" id="f5H-ym-tes"/>
+                                    <outletCollection property="gestureRecognizers" destination="Zzh-4f-Nsl" appends="YES" id="1PK-w0-TJx"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="歌曲名稱" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zi6-r1-Vpt">
                                 <rect key="frame" x="59" y="494" width="271" height="21"/>
@@ -137,6 +142,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Y1X-3A-avH">
+                    <connections>
+                        <action selector="SwipeAction:" destination="BYZ-38-t0r" id="xUi-M4-AlY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Zzh-4f-Nsl">
+                    <connections>
+                        <action selector="SwipeAction:" destination="BYZ-38-t0r" id="LQM-ab-Jbo"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="3.3482142857142856"/>
         </scene>

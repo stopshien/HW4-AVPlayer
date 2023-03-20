@@ -56,6 +56,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        replacementNewSong() // ???? 加了這個才能解決開啟程式第一下按 page 沒反應的問題。
         songImageView.image = UIImage(named: songArray[currentSong].Name!)
         songName.text = songArray[currentSong].Name!
         singerName.text = songArray[currentSong].singer!
@@ -130,6 +131,20 @@ class ViewController: UIViewController {
     }
     
     
+    // 加入左右滑手是，將兩個手勢加入同一個 Action
+    /*
+     手勢加入教學參考
+     https://medium.com/彼得潘的試煉-勇者的-100-道-swift-ios-app-謎題/真愛的模樣-image-view-和-segmented-control-練習-675d64d5c94c
+     */
+    @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == .left {
+                    forwardAction()
+            } else if sender.direction == .right {
+                    backwardAction()
+            }
+    }
+    
+    
     
     func backwardAction(){
         
@@ -187,8 +202,9 @@ class ViewController: UIViewController {
         playerItem = AVPlayerItem(url: songArray[currentSong].url!)
         player.replaceCurrentItem(with: playerItem)
         songDuration = playerItem?.asset.duration.seconds ?? 0
-        setOutlet()
         pageOutlet.currentPage = currentSong
+        setOutlet()
+
 
     }
     
