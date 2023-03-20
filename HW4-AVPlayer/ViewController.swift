@@ -48,6 +48,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    @IBOutlet weak var pageOutlet: UIPageControl!
     
     
     
@@ -122,6 +123,13 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func pageChangeAction(_ sender: UIPageControl) {
+
+        currentSong = sender.currentPage
+        replacementNewSong()
+    }
+    
+    
     
     func backwardAction(){
         
@@ -135,7 +143,6 @@ class ViewController: UIViewController {
             player.play()
         }
     playButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-
         
     }
     
@@ -153,6 +160,7 @@ class ViewController: UIViewController {
             player.play()
         }
         playButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+
 
         
     }
@@ -180,6 +188,8 @@ class ViewController: UIViewController {
         player.replaceCurrentItem(with: playerItem)
         songDuration = playerItem?.asset.duration.seconds ?? 0
         setOutlet()
+        pageOutlet.currentPage = currentSong
+
     }
     
     //設定Label Image 等 Outlet 的顯示
@@ -216,7 +226,43 @@ class ViewController: UIViewController {
         songImageView.layer.borderColor = CGColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.4)
         
     }
-    
+ /*
+    // 加入page controller 控制切換上下首
+    func pageChange(){
+        
+        switch pageOutlet.currentPage{
+            
+        case 0 :
+            currentSong = 0
+            if player.timeControlStatus == .playing{
+                playButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                replacementNewSong()
+            }else{
+                replacementNewSong()
+            }
+        case 1 :
+            currentSong = 1
+            if player.timeControlStatus == .playing{
+                playButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                replacementNewSong()
+            }else{
+                replacementNewSong()
+            }
+        case 2 :
+            currentSong = 2
+            if player.timeControlStatus == .playing{
+                playButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                replacementNewSong()
+            }else{
+                replacementNewSong()
+            }
+
+        default:
+            return
+        }
+      
+    }
+    */
     
 }
 

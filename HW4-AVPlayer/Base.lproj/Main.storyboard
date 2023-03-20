@@ -111,6 +111,13 @@
                                     <action selector="shuffleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m4W-1j-Qq9"/>
                                 </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0oL-VY-nJ7">
+                                <rect key="frame" x="136" y="460" width="117" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pageChangeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Kzq-pq-dhy"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,6 +128,7 @@
                         <outlet property="backwardButtinOutlet" destination="iZ6-Fe-ULi" id="ObU-eX-gob"/>
                         <outlet property="currentTimeLabel" destination="8Yv-QR-aFj" id="1bW-0T-ViT"/>
                         <outlet property="forwardButtonOutlet" destination="9UL-Mz-p5l" id="nAb-nd-XkR"/>
+                        <outlet property="pageOutlet" destination="0oL-VY-nJ7" id="wGm-w1-CYL"/>
                         <outlet property="playButtonOutlet" destination="baH-Jr-uDR" id="ohx-i9-DJ1"/>
                         <outlet property="singerName" destination="ZLg-Im-qbI" id="g2o-Ie-9X5"/>
                         <outlet property="songImageView" destination="GvX-tb-zKu" id="9VQ-de-8rq"/>
