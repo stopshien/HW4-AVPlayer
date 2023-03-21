@@ -56,7 +56,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        replacementNewSong() // ???? 加了這個才能解決開啟程式第一下按 page 沒反應的問題。
+//        replacementNewSong() // ???? 加了這個才能解決開啟程式第一下按 page 沒反應的問題。
+
+
         songImageView.image = UIImage(named: songArray[currentSong].Name!)
         songName.text = songArray[currentSong].Name!
         singerName.text = songArray[currentSong].singer!
@@ -210,15 +212,18 @@ class ViewController: UIViewController {
     
     //設定Label Image 等 Outlet 的顯示
     func setOutlet(){
-        // 加入Observer 來觀察歌曲進度
+
+        songImageView.image = UIImage(named: songArray[currentSong].Name!)
+        backgroundImage.image = UIImage(named: songArray[currentSong].Name!)
+        songName.text = songArray[currentSong].Name
+        singerName.text = songArray[currentSong].singer
+        songTimeSlider.maximumValue = Float(songDuration)
+
+        
+        // 加入Observer 來觀察歌曲進度，裡面個動作是在歌曲播放後才會執行，所以若把影像加進裡面會讓第一次執行時圖片不會更動。
 
         player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 1), queue: .main) { (CMTime) in
                 self.currentTime = Float(self.player.currentTime().seconds)
-                self.songImageView.image = UIImage(named: self.songArray[self.currentSong].Name!)
-                self.backgroundImage.image = UIImage(named: self.songArray[self.currentSong].Name!)
-                self.songName.text = self.songArray[self.currentSong].Name
-                self.singerName.text = self.songArray[self.currentSong].singer
-                self.songTimeSlider.maximumValue = Float(self.songDuration)
                 self.songTimeSlider.value = self.currentTime
                 self.songTimeSlider.isContinuous = true
                 self.exportTimeValue()
@@ -228,7 +233,6 @@ class ViewController: UIViewController {
     }
     // 轉換時間 秒變分
     func exportTimeValue(){
-//        let totalTime = Int(songDuration).quotientAndRemainder(dividingBy: 60)
         let currentTimeExport = Int(currentTime).quotientAndRemainder(dividingBy: 60)
         currentTimeLabel.text = String("\(currentTimeExport.quotient):\(currentTimeExport.remainder)")
         let lessTime = Int(Int(songDuration) - Int(currentTime)).quotientAndRemainder(dividingBy: 60)
